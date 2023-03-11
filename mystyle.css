@@ -45,6 +45,9 @@
     text-align: center;
 
 }
+table, th, td, tr{
+    border: 3px #f2f2f2;
+}
 
 footer {
     text-align: center;

@@ -3,6 +3,7 @@
 
     <head>
         <link rel="stylesheet" href="mystyle.css">
+        <title>Testman - Resources</title>
     </head>
 
     <!--Top Navigation section-->
@@ -18,7 +19,8 @@
                 me</a>
         </div>
         <div class="topnav">
-            <a href="#java">Java resources</a><a href="#gen-test">General Testing resources</a><a href="#automation">Automation Resources</a>
+            <a href="#java">Java resources</a><a href="#gen-test">General Testing resources</a><a
+                href="#automation">Automation Resources</a>
         </div>
     </div>
     <!--end Top Navigation section-->
@@ -29,23 +31,85 @@
 
         </p>
         <a id="java">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
+            <h2>Java Resources</h2>
+        </a>
+        <a id="gen-test">
+            <h2>General Testing Theories and Practices</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit
+                anim id est laborum.
 
-        </p>
-    </a>
-    <a id="gen-test">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
+            </p>
+        </a>
+        <a id="automation">
+            <h2>Automation Resources</h2>
+            <p>What is the HTML DOM? This is is a Javascript identifier that is used in web pages. It relates very
+                closely to the Page Object Model.
+                The HTML DOM is a standard object model and programming interface for HTML. It defines:
+                <ul>
+                    <li>The HTML elements as objects</li>
+                    <li>The properties of all HTML elements</li>
+                    <li>The methods to access all HTML elements</li>
+                    <li>The events for all HTML elements</li>
+                </ul>
+                In other words: The HTML DOM is a standard for how to get, change, add, or delete HTML elements.
+                To access the DOM of a page, press F12 key on the keyboard and (in Chrome) under the Elements tab the
+                tree structure of the DOM will be displayed.
+            </p>
 
-        </p>
-    </a>
+            <p>HTML DOM methods are actions you can perform (on HTML Elements).
+                HTML DOM properties are values (of HTML Elements) that you can set or change.
+                The DOM Programming Interface
+                The HTML DOM can be accessed with JavaScript (and with other programming languages).
+                In the DOM, all HTML elements are defined as objects.
+                The programming interface is the properties and methods of each object.
+                A property is a value that you can get or set (like changing the content of an HTML element).
+                A method is an action you can do (like add or deleting an HTML element).
+
+            </p>
+            <h3>Page Object Model</h3>
+            <p> In the same way that a DOM identifies the structure of the page, when we perform testing we aim to model
+                the page along the same method.
+                By using the elements of the page that we can interact with and setting these up as a tree-structured
+                model, we can model these as objects and perform test interactions on them using the standard Java
+                programming interface given with use of libraries such as Selenium.
+            </p>
+            <p>To get started, it is recommended to create a paper version of the DOM, outlining the main elements on
+                the page that are to be used in the test. As this partcular interest in the DOM is in the scope of
+                testing, we are only going to consider those elements that would form our test. </p>
+                <h4>POM folder structure</h4>
+                <p>Although there is no hard a fast rules to naming conventions, it is recommended that the page models are kept in a separate folder to the tests. This enables the page models to be kept updated separately, and for better re-usability. Tests may be further split in folders depending on versions, test cases or stages or even different authors or executors.
+                    Mostly we use the two folders "pages" and "tests" to contain the relevant classes. 
+                    <h4>Page Classes</h4><p>A single class should capture a single page. General Java rules of inheritance, reusability etc can helpwith designing page models that inherit some different attributes of the other page classes. Each page model should contain all the elements required of the page as attributes, and all the interactions we can have with the page as methods. When naming these, it is helpful to name them according to exactly what they do. There is also the possibility that a method may appear on multiple classes. This may seem confusing, but in use with the test, each would have the page name affixed at the front, so there would be little actual confusion (ie. homepage.clickResourcesTab() and contactpage.clickResourcesTab() separate themselves easily when used in code)</p>
+                    <h4>Test Classes</h4>
+                    Test classes should contain no direct references to the page itself (via the use os Selenium selectors or other element interation with the page). Test classes should contain only references to the methods and attributes of the page models. 
+                    When writing the test case, if care has been taken with the naming of the page model elements and methods, then the test should be easily human readable.
+                    <table>
+                        <thead>
+                        <tr><th>Bad test!</th>
+                        <th>Better test!</th>
+                    </tr></thead>
+                    <tbody><tr><td>baseURL.getElement(id=name)</td>
+                    <td>homePage.name</td>
+                    </tr></tbody>
+                    </table>
+                </p>
+            <h3>Selenium</h3>
+            <p>Selenium is a programming library we can use to perform interactions with webpages. The basic syntax of
+                the language follows object method calls using dot notation.</p>
+            <p>
+                To get started, it is helpful to know the general commands and interface that Selenium has so as to
+                better design and consider what our test model can and can't do..
+            </p>
+
+
+
+        </a>
     </body>
     <footer>Any questions, suggestions? Ask me <a href="mailto:djohansen112@gmail.com">here!</a>
     </footer>
